@@ -1,0 +1,262 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  font-size: 10px;
+  font-family: Montserrat, san-serif;
+}
+
+body {
+  background-color: rgb(39, 38, 46);
+}
+
+main {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  background-color: rgb(89, 84, 78);
+  width: 100%;
+  font-family: Caveat, cursive;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+nav ul {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  margin-block: 1rem;
+}
+
+nav ul li a {
+  color: whitesmoke;
+}
+
+.welcome-section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25rem;
+  margin-bottom: 9rem;
+  height: 32rem;
+}
+.welcome-section div {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.welcome-section img {
+  position: absolute;
+  border-radius: 50%;
+  width: 300px;
+  top: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.welcome-section div h1,
+.welcome-section div p {
+  color: whitesmoke;
+  line-height: 1.5;
+}
+
+.welcome-section div h1 {
+  margin-top: 15rem;
+  font-size: 3rem;
+}
+
+.welcome-section div p {
+  font-size: 2rem;
+}
+
+.name {
+  font-family: Caveat, cursive;
+  font-size: 5rem;
+}
+
+.welcome-section div p {
+  font-family: Caveat, cursive;
+  font-size: 5rem;
+}
+
+#projects h2 {
+  text-align: center;
+  color: whitesmoke;
+  font-size: 3rem;
+  margin-bottom: 5rem;
+}
+
+.projects-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.project-tile {
+  display: block;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  z-index: 1;
+  scale: 0.8;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: -1;
+  transition: all 700ms;
+}
+
+.project-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 98%;
+  height: 20%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: black;
+  text-shadow: 1px 1px 2px white;
+  z-index: 3;
+  background-color: rgba(250, 235, 215, 0.7);
+  font-size: 2rem;
+  font-weight: 600;
+  border-radius: 0 0 80% 80%;
+  opacity: 0;
+}
+
+.projects-section a.btn {
+  font-family: Caveat, cursive;
+  font-size: 4rem;
+  font-weight: 700;
+  margin-top: 4rem;
+}
+.projects-section a.btn i.fas {
+  padding-left: 2rem;
+}
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact-section-header {
+  text-align: center;
+  padding: 3rem;
+}
+
+.contact-section-header h2 {
+  font-size: 3rem;
+  color: #f1f6c6;
+}
+
+.contact-section-header p {
+  padding-top: 1rem;
+  font-size: 1.5rem;
+  color: #f1f6c6;
+}
+
+.contact-links {
+  font-size: 1.5rem;
+  margin: 2rem;
+}
+
+.contact-links a {
+  margin: 1rem;
+}
+
+form {
+  padding-bottom: 3rem;
+}
+form input {
+  height: 4ch;
+  width: 32ch;
+  padding: 1rem;
+}
+
+form button {
+  width: 4ch;
+  height: 4ch;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  #navbar ul li a:hover {
+    opacity: 0.6;
+  }
+
+  .projects-grid a:hover .project-image {
+    border-radius: 10%;
+  }
+
+  .projects-grid a:hover .project-title {
+    transition: all 1s;
+    font-size: 2.5rem;
+    opacity: 1;
+  }
+
+  .contact-links a:hover {
+    color: white;
+  }
+
+  .projects-section a.btn:hover {
+    color: white;
+  }
+}
+@media screen and (min-width: 700px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
